@@ -45,7 +45,7 @@ defmodule PixelConversionServer.FacebookAPI do
                 try do
                   PixelConversionServer.FacebookAPI.make_request(items, fn (status, response) ->
                     Rollbax.report_message(:warning, "Status: #{status}, response: #{response}")
-                  end, %{piuxel_id: pixel_id, access_token: access_token, test_event_code: test_event_code})
+                  end, %{pixel_id: pixel_id, access_token: access_token, test_event_code: test_event_code})
                 rescue
                   exception -> Rollbax.report(:error, exception, System.stacktrace())
                 end
